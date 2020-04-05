@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "isActive": true,
+      "balance": "$10.00",
+      "picture": "https://lumiere-a.akamaihd.net/v1/images/ct_mickeymouseandfriends_mickey_ddt-16970_4e99445d.jpeg?region=0,0,600,600&width=480",
+      "age": "90",
+      "eyeColor": "Black",
+      "company": "Walt Disney Company",
+      "phone": "111-111-1111",
+      "address": "No Value",
+      "_id": "_kZDuMk2c",
+      "email": "mickey@gmail.com",
+      "password": "b1065367b9f7c6dfc9a5e9e7865513b139f67d458637b134b6c54427b8bd21e1",
+      "name": {
+        "first": "Mickey",
+        "last": "Mouse"
+      },
+      "guid": "8wbkv1u75bqk8ndjkbu",
+      "salt": "6K9cu5qavd"
+    }
+  ]
+}
