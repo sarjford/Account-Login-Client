@@ -1,3 +1,11 @@
+.account-link {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  margin-top: 10px;
+  color: #2994F2;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,17 +13,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
 }
 
 .btn {
@@ -38,6 +35,12 @@ code {
   color: #2994F2;
 }
 
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
 img {
   display: block;
 }
@@ -50,14 +53,6 @@ p, h3 {
   width: 80%;
   max-width: 400px;
   margin: 0 auto;
-}
-
-.account-link {
-  text-align: center;
-  margin: 0 auto;
-    display: block;
-    margin-top: 10px;
-    color: #2994F2;
 }
 
 .registration-form {

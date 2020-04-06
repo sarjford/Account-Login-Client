@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { BrowserRouter as Route, useHistory, Link, Switch, useRouteMatch } from 'react-router-dom';
-import userService from './services/user.service';
-
 
 import BalanceView from './balanceView';
 import DefaultView from './defaultView';
-
+import EditView from './editView';
 
 import './dashboard.css';
 
 
+// DASHBOARD PAGE - /dashboard
+// this page includes nested routes:
+// /dashboard/balance 
+// /dashboard/default 
+// /dashboard/edit
 
 export default function Dashboard(props) {
 
@@ -34,7 +37,9 @@ export default function Dashboard(props) {
 
       <div className="container">
 
-        <img src={data.picture} className="profile-picture" alt="profile"/>
+        <div className="profile-picture">
+          <img src={data.picture} alt="profile"/>
+        </div>
 
         <div className="dashboard__buttons">
           <Link className="btn" to="/dashboard/balance">Balance</Link>
@@ -60,6 +65,8 @@ export default function Dashboard(props) {
   );
 }
 
+
+// dropdown menu in upper right corner
 const Menu = (props) => {
 
   let history = useHistory();
@@ -74,112 +81,5 @@ const Menu = (props) => {
       <Link to="/dashboard/">Profile</Link>
       <a onClick={clearData}>Logout</a>
     </div>
-  )
-}
-
-
-// const BalanceView = (props) => {
-//   console.log('balance', props)
-
-//   return (
-//     <div className="balance tile">
-//       <h3>Your Balance</h3>
-//       <p>{props.data.balance}</p>
-//     </div>
-//   );
-// }
-
-
-// const DefaultView = (props) => {
-
-//   console.log('inside default')
-//   let data = props.data;
-//   console.log('default', data)
-//   return (
-//     <ul>
-//       <li className="tile">
-//         <h3>First Name</h3>
-//         <p>{data.name.first}</p>
-//       </li>
-//       <li className="tile">
-//         <h3>Last Name</h3>
-//         <p>{data.name.last}</p>
-//       </li>
-//       <li className="tile">
-//         <h3>Company</h3>
-//         <p>{data.company}</p>
-//       </li>
-//       <li className="tile">
-//         <h3>Email</h3>
-//         <p>{data.email}</p>
-//       </li>
-//       <li className="tile">
-//         <h3>Phone Number</h3>
-//         <p>{data.phone}</p>
-//       </li>
-//       <li className="tile">
-//         <h3>Age</h3>
-//         <p>{data.age}</p>
-//       </li>
-//       <li className="tile">
-//         <h3>Address</h3>
-//         <p>{data.age}</p>
-//       </li>
-//       <li className="tile">
-//         <h3>Eye Color</h3>
-//         <p>{data.eyeColor}</p>
-//       </li>
-//     </ul>
-//   );
-// }
-
-
-const EditView = (props) => {
-
-  const subset = (obj, propList) => propList
-  .reduce((newObj, prop) => {
-    obj.hasOwnProperty(prop) && (newObj[prop] = obj[prop]);
-    return newObj;
-  }, {});
-
-  const data = subset(props.data, ['company', 'email', 'phone', 'age', 'eyeColor', 'picture']);
-
-  return (
-    <ul className="edit-properties">
-      {Object.keys(data).map((item, i) => 
-        <EditItem
-          name={item}
-          currentValue={data[item]}
-          key={i} 
-          guid={props.data.guid} 
-          setUserData={props.setUserData}
-        />
-      )}
-    </ul>
-  );
-}
-
-
-const EditItem = (props) => {
-  
-  const [value, setValue] = useState('');
-
-  const submitUpdate = async () => {
-    let update = {guid: props.guid};
-    update[props.name] = value;
-    console.log(update)
-    let res = await userService.edit(update);
-    props.setUserData(res.data);
-  }
-
-  return (
-    <li className="tile edit-property">
-      <h3>Edit {props.name}</h3>
-      <span>Current {props.name}</span>
-      <input placeholder={props.currentValue} disabled></input>
-      <span>New {props.name}</span>
-      <input onChange={(event) => setValue(event.target.value)}></input>
-      <button type="submit" onClick={submitUpdate}className="btn">Save</button>
-    </li>
   )
 }

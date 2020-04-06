@@ -2,15 +2,15 @@ import React, { useState } from "react";
 
 import userService from './services/user.service';
 
-
+// EDIT PAGE - /dashboard/edit
 const EditView = (props) => {
 
+  // only render some properties
   const subset = (obj, propList) => propList
   .reduce((newObj, prop) => {
     obj.hasOwnProperty(prop) && (newObj[prop] = obj[prop]);
     return newObj;
   }, {});
-
   const data = subset(props.data, ['company', 'email', 'phone', 'age', 'eyeColor', 'picture']);
 
   return (
@@ -28,11 +28,13 @@ const EditView = (props) => {
   );
 }
 
-
+// edit a single item
 const EditItem = (props) => {
   
+  // update state with value of edited property
   const [value, setValue] = useState('');
 
+  // handler to send update to api
   const submitUpdate = async () => {
     let update = {guid: props.guid};
     update[props.name] = value;

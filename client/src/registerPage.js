@@ -4,6 +4,8 @@ import { useHistory, Link } from 'react-router-dom';
 import userService from './services/user.service';
 
 
+
+// Registation Page - /register
 export default function RegisterPage() {
 
   const [first, setFirst] = useState('');

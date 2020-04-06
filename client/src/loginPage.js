@@ -3,7 +3,7 @@ import { useHistory, Link } from 'react-router-dom';
 
 import userService from './services/user.service';
 
-
+// Login Page - /login
 export default function LoginPage(props) {
 
   let history = useHistory();
