@@ -18,25 +18,6 @@
       },
       "guid": "8wbkv1u75bqk8ndjkbu",
       "salt": "6K9cu5qavd"
-    },
-    {
-      "isActive": true,
-      "balance": "No Value",
-      "picture": "https://soulcore.com/wp-content/uploads/2018/01/profile-placeholder-300x300@2x.png",
-      "age": "No Value",
-      "eyeColor": "No Value",
-      "company": "No Value",
-      "phone": "No Value",
-      "address": "No Value",
-      "_id": "wBjr-br_X",
-      "email": "f",
-      "password": "f3b7c5108092e6928392ddaf76363645f920947f160b3bb7faf921c7e94a8f36",
-      "name": {
-        "first": "f",
-        "last": "f"
-      },
-      "guid": "6pgt3wq12ymk8nq1ufu",
-      "salt": "tV0sV2TVjk"
     }
   ]
 }

@@ -2,8 +2,9 @@ import React from "react";
 
 
 const DefaultView = (props) => {
+
   let data = props.data;
-  console.log('default', data)
+
   return (
     <ul>
       <li className="tile">

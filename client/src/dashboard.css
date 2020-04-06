@@ -12,7 +12,7 @@
   font-weight: bold;
 }
 
-.dropdown a {
+.dropdown__link {
   border-bottom: 1px solid #fff;
   display: flex;
   align-items: center;

@@ -36,9 +36,9 @@ const EditItem = (props) => {
 
   // handler to send update to api
   const submitUpdate = async () => {
+    
     let update = {guid: props.guid};
     update[props.name] = value;
-    console.log(update)
     let res = await userService.edit(update);
     props.setUserData(res.data);
   }
