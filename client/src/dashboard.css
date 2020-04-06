@@ -22,6 +22,7 @@ header svg {
 header button {
   background: #2994F2;
   border: none;
+  position: relative;
 }
 
 .dropdown {
@@ -33,7 +34,8 @@ header button {
   font-size: 16px;
   justify-content: space-between;
   width: 100px;
-  right: 215px;
+  right: 0;
+  font-weight: bold;
 }
 
 .dropdown a {
@@ -51,6 +53,7 @@ header button {
   margin: 0 auto;
   margin-bottom: 25px;
   max-width: 200px;
+  min-height: 150px;
 }
 
 .dashboard__buttons {

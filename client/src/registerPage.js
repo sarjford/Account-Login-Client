@@ -34,7 +34,7 @@ export default function RegisterPage() {
     <div className="container">
       <img src="https://i.imgur.com/jL4e0oJ.png" className="logo" alt="logo" />
 
-      <div className="">
+      <div className="registration-form">
         <input placeholder="First Name"
           onChange={(event) => setFirst(event.target.value)}></input>
         <input placeholder="Last Name"
@@ -47,8 +47,11 @@ export default function RegisterPage() {
           onClick={submitNewUser}>Register</button>
       </div>
 
-      <Link className="account-link" to="/login">Have an Account? Log In</Link>
+      <div>
+        <p>After registering you will be redirected to the Login page.</p>
+      </div>
 
+      <Link className="account-link" to="/login">Have an Account? Log In</Link>
     </div>
   );
 }

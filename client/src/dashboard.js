@@ -3,6 +3,10 @@ import { BrowserRouter as Route, useHistory, Link, Switch, useRouteMatch } from 
 import userService from './services/user.service';
 
 
+import BalanceView from './balanceView';
+import DefaultView from './defaultView';
+
+
 import './dashboard.css';
 
 
@@ -68,66 +72,66 @@ const Menu = (props) => {
   return (
     <div className="dropdown">
       <Link to="/dashboard/">Profile</Link>
-      <div onClick={clearData}>Logout</div>
+      <a onClick={clearData}>Logout</a>
     </div>
   )
 }
 
 
-const BalanceView = (props) => {
-  console.log('balance', props)
+// const BalanceView = (props) => {
+//   console.log('balance', props)
 
-  return (
-    <div className="balance tile">
-      <h3>Your Balance</h3>
-      <p>{props.data.balance}</p>
-    </div>
-  );
-}
+//   return (
+//     <div className="balance tile">
+//       <h3>Your Balance</h3>
+//       <p>{props.data.balance}</p>
+//     </div>
+//   );
+// }
 
 
-const DefaultView = (props) => {
+// const DefaultView = (props) => {
 
-  console.log('inside default')
-  let data = props.data;
-  console.log('default', data)
-  return (
-    <ul>
-      <li className="tile">
-        <h3>First Name</h3>
-        <p>{data.name.first}</p>
-      </li>
-      <li className="tile">
-        <h3>Last Name</h3>
-        <p>{data.name.last}</p>
-      </li>
-      <li className="tile">
-        <h3>Company</h3>
-        <p>{data.company}</p>
-      </li>
-      <li className="tile">
-        <h3>Email</h3>
-        <p>{data.email}</p>
-      </li>
-      <li className="tile">
-        <h3>Phone Number</h3>
-        <p>{data.phone}</p>
-      </li>
-      <li className="tile">
-        <h3>Age</h3>
-        <p>{data.age}</p>
-      </li>
-      <li className="tile">
-        <h3>Address</h3>
-        <p>{data.age}</p>
-      </li>
-      <li className="tile">
-        <h3>Eye Color</h3>
-        <p>{data.eyeColor}</p>
-      </li>
-    </ul>
-  );
-}
+//   console.log('inside default')
+//   let data = props.data;
+//   console.log('default', data)
+//   return (
+//     <ul>
+//       <li className="tile">
+//         <h3>First Name</h3>
+//         <p>{data.name.first}</p>
+//       </li>
+//       <li className="tile">
+//         <h3>Last Name</h3>
+//         <p>{data.name.last}</p>
+//       </li>
+//       <li className="tile">
+//         <h3>Company</h3>
+//         <p>{data.company}</p>
+//       </li>
+//       <li className="tile">
+//         <h3>Email</h3>
+//         <p>{data.email}</p>
+//       </li>
+//       <li className="tile">
+//         <h3>Phone Number</h3>
+//         <p>{data.phone}</p>
+//       </li>
+//       <li className="tile">
+//         <h3>Age</h3>
+//         <p>{data.age}</p>
+//       </li>
+//       <li className="tile">
+//         <h3>Address</h3>
+//         <p>{data.age}</p>
+//       </li>
+//       <li className="tile">
+//         <h3>Eye Color</h3>
+//         <p>{data.eyeColor}</p>
+//       </li>
+//     </ul>
+//   );
+// }
 
 
 const EditView = (props) => {
