@@ -25,18 +25,12 @@ module.exports = (app) => {
     // find user by email
     let targetUser = db.get('users').value().filter((user) => user.email === credentials.email);
 
-    console.log(targetUser)
-
     // salt incoming password and sha256 it
     const saltedInputPw = credentials.password.concat(targetUser[0].salt);
     const hash = crypto.createHash('sha256').update(saltedInputPw).digest('hex');
 
     // only return public properties
     const data = subset(targetUser[0]);
-
-    console.log(hash)
-    console.log(targetUser[0].password)
-    console.log(data)
 
     // compare saved password to salted incoming password, if they match then create response object with user data
     if (hash === targetUser[0].password) {
@@ -75,8 +69,7 @@ module.exports = (app) => {
     const hash = crypto.createHash('sha256').update(saltedPw).digest('hex');
 
     // add to database
-    db
-      .get('users')
+    db.get('users')
       .push(Object.assign(userModel, { 
         _id,
         email, 
@@ -104,8 +97,6 @@ module.exports = (app) => {
   // UPDATE 
   app.put(`/api/user`, async (req, res) => {
     const updatedData = req.body;
-
-    console.log('req body', updatedData)
 
     db.get('users')
         .find({ guid: updatedData.guid })
